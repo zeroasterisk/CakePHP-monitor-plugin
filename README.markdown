@@ -10,6 +10,14 @@ We will also be providing "hooks" for exporting data to external monitoring serv
 
 There will also be a "dashboard" and pretty charts to look at real time status for all the things you monitor.
 
+Concepts
+===========================================================
+
+Monitorable->getData() = You have to track various data in your application.
+Monitorable->monitorData() = You have tracked data, here's how you'll set thresholds and know status
+Monitorable->monitorData() = You have tracked data, here's how you'll set thresholds and know status
+
+
 Implementation
 ===========================================================
 
@@ -34,13 +42,19 @@ Add the Monitorable behaviour to any model.
     public $actsAs = array('Monitor.Monitorable', /*....*/);
 	TODO: list Monitorable methods
 
-Now start Tracking data
+Now start Monitoring Tracked data
 -----------------------------------------------------------
 
 Add the Monitorable behaviour to any model.
 
     public $actsAs = array('Monitor.Monitorable', /*....*/);
 	TODO: list Monitorable methods
+
+Now implement a cron job to run
+-----------------------------------------------------------
+
+    cd app
+    cake monitor run all
 
 Configuration
 -----------------------------------------------------------
@@ -58,8 +72,10 @@ Here are the parameters you can set:
 		);
 
 Unit Tests
+-----------------------------------------------------------
 
 About
+-----------------------------------------------------------
 
 author Alan Blount <alan@zeroasterisk.com>
 copyright (c) 2011 Alan Blount
